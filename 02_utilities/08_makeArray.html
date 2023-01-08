@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.6.1.min.js" type="text/javascript"></script>
+        <script>
+            //1.jquery(HTML object)
+            $(document).ready(function (e) {
+                
+                var a, b;
+                a = $("#boxA .item");
+                console.log(a);
+                console.log(a + "");
+                
+                var a1, b1;
+                a1 = [2, 4, 6, 8];
+                
+                var obj = {
+                    title: "jquery master",
+                    author: "programmer",
+                };
+                var arr;
+                $("#process").click(function (e) {
+                    //-----------------makeArray--------------------------------
+                    b = $.makeArray(a);
+                    console.log(b);
+//                    console.log(b + "");
+                    console.log(b.reverse());
+                    //-----------------map--------------------------------
+                    b1 = $.map(a1, function(val, idx){
+                        return val * 2;
+                    });
+                    console.log(b1);//(4) [4, 8, 12, 16]
+                    
+                    arr = $.map(obj, function(val, idx){
+                       return idx; 
+                    });
+                     console.log(arr);//(2) ['title', 'author']
+                });
+                
+               
+            });
+
+           
+        </script>
+
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <h1 style="text-align: center;">
+           jQuery.makeArray(obj) => convert jquery object to array
+           
+           jQuery.map(array, function(value, index))
+           <br/> 
+        </h1>
+        <div id="boxA" class="boxA">
+            <div class="item">1.HTML</div>
+            <div class="item">2.CSS</div>
+            <div class="item">3.JS</div>
+            <div class="item">4.Jquery</div>
+        </div>
+    <center>
+        <input type="button" class="button" id="process" value="Process">
+    </center>
+</body>
+</html>

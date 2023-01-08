@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.6.1.min.js" type="text/javascript"></script>
+        <script>
+            //1.jquery(HTML object)
+            $(document).ready(function (e) {
+                //-------------------------------------------------
+                var book1 = {
+                    title: "Lap trinh js",
+                    author: "Programmer1",
+                    pages: 400,
+                    price: 50.40,
+                    shipping:{
+                        us:1.5,
+                        eu:6.8,
+                        jp:200
+                    }
+                };
+                var book2 = {
+                    title: "Lap trinh php",
+                    author: "Programmer2",
+                    pages: 500,
+                    price: 60.50,
+                    shipping:{
+                        us:1.5,
+                        vn:6.8,
+                        jp:300
+                    }
+                };
+                $("#process").click(function (e) {
+                    //C1: jQuery.extend(target, [,object1], [, objectN])
+//                    console.log(book1);
+//                    console.log(book2);
+//                    $.extend(book1, book2); //content of book2 override len book1
+//                    console.log(book1);
+                    
+                    
+//                    console.log(book1);
+//                    console.log(book2);
+//                    newObj = $.extend({}, book1, book2); //content of book2 override len book1
+//                    console.log(newObj);
+                    
+                    //C2: jQuery.extend([deep], target, [,object1], [, objectN])
+                    console.log(book1);
+                    console.log(book2);
+                    $.extend(false, book1, book2); //vs deep = false => content of book1 van giu nguyen
+                    console.log(book1);
+                    
+                    //Neu deep = true thi book1 se bi book2 override
+                });
+            });
+
+        </script>
+
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <h1 style="text-align: center;">
+            jQuery.extend(target, [,object1], [, objectN]) <br/> 
+            
+            jQuery.extend([deep], target, [,object1], [, objectN]) <br/>
+        </h1>
+        <div id="boxA" class="boxA">
+            <div class="item">1.HTML</div>
+            <div class="item">2.CSS</div>
+            <div class="item">3.JS</div>
+            <div class="item">4.Jquery</div>
+        </div>
+    <center>
+        <input type="button" class="button" id="process" value="Process">
+    </center>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.6.1.min.js" type="text/javascript"></script>
+        <script>
+            //1.jquery(HTML object)
+            $(document).ready(function(e){
+//                var boxA = document.getElementById("boxA");
+//                console.log(boxA + " "); //[object HTMLDivElement] 
+//                $(boxA).css("border-color", "red");
+
+//                var boxA = document.getElementById("boxA");
+//                console.log(boxA + " "); //[object HTMLDivElement] 
+//                console.log($("#boxA")); //
+//                console.log($("#boxA")[0]); //
+                //------------jquery selector------------------------------
+//                  $("#boxA").css("border-color", "green");  
+                
+                //------------jquery add html string------------------------------
+//                var str = '<span style="color: red; font-size: 20px">jquery basic</span>';
+//                console.log(str);
+//                $(str).appendTo("#boxA");
+                //------------jquery(HTML string, attribute object)------------------------------
+//                $("<div></div>",{class:"bg01", text: "jquery master"}).appendTo("#boxA");
+//
+                //-------------jquery CLICK------------------------------------
+                $("#process").click(function(e){
+//                    console.log(e);
+                    $("#boxA").addClass("bg01");
+                    //-------html(val) or html() for get content vs div----------------------
+                    var tmp = $("#boxA").html();
+                    console.log(tmp);//content inner
+                    console.log(typeof(tmp));//string
+                    console.log($.type(tmp));//string
+                    
+//                    $("#boxB").html(tmp);
+                    //-------text for get content vs text---------
+                    var tmp2 = $("#boxA").text();
+                    $("#boxB").text(tmp2);
+                });
+                //-------------------------------------------------
+                //-------------------------------------------------
+                //-------------------------------------------------
+            });
+
+                //------------jquery function()--------------------
+//                $(function(){
+//                   $("#boxA").addClass("bg01"); 
+//                });
+        </script>
+    
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <h1 style="text-align: center;">jQuery(val)</h1>
+        <div id="boxA" class="boxA">
+            <div>1. HTML</div>
+            <div>2. CSS</div>
+        </div>
+        <div id="boxB" class="boxA">
+           
+        </div>
+    <center>
+        <input type="button" class="button" id="process" value="Process">
+    </center>
+    </body>
+</html>

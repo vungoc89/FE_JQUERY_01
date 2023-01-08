@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-3.6.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            $(document).ready(function (e) {
+                $("#process").click(function () {
+                   //TH 1
+			//$("#boxA div:gt(0)").addClass("bg02");
+			//$("#boxA :gt(0)").addClass("bg02");
+			
+			//TH 2
+			//$("#boxA div:lt(2)").addClass("bg02");
+			$("#boxA :lt(2)").addClass("bg02");
+                });
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <h1 style="text-align:center; padding: 5px;">jQuery(":gt(index) - lt(index)")</h1>
+
+    <center>
+        <input type="button" class="button" id="process" value="Process"/>
+    </center>
+
+    <div id="boxA" class="boxA">
+        <div class="item">1. HTML</div>
+        <p class="item text2">2. CSS</p>
+        <div class="item"><strong>3. JS</strong></div>
+        <span class="item bg01 text2">4. jQuery</span>
+    </div>
+
+    <div id="boxB" class="boxA">
+        <div class="item">1. PHP</div>
+        <p class="item text2">2. ASP</p>
+        <div class="item">3. JSP</div>
+        <span class="item text2 bg01" >4. Perl</span>
+        <span class="item text3">5. ASPX</span>
+    </div>
+</body>
+</html>
